@@ -1,2 +1,4 @@
 # flutter-getting-started
 Have you ever tried to create an app for IOS and Android, and looked for a fast, reliable, and single-code-base platform? If so, this project, Flutter: Getting Started, is the perfect tutorial for you. In this project  you’ll learn how to build apps with Flutter, mobile platform backed by Google. First, you’ll explore how to build a Hello World app with Flutter. Next, you’ll build a user interface and add interactivity. Finally, you’ll discover how to create a complete database app. When you’re finished with this course, you’ll have a foundational knowledge of Flutter that will help you as you move forward to build great and successful mobile apps for Android and IOS with Flutter.
+
+Please refer to the [wiki pages](https://github.com/AdarshMaurya/flutter-getting-started/wiki). Happy learning!
