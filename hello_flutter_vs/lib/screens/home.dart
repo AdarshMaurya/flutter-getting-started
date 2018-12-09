@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class home extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -13,5 +13,17 @@ class home extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String sayHello() {
+    String hello;
+    hello = "hello";
+    //var hello = "hello";
+    //var hello = 8 ;
+    //num myNum = 42;
+    // int myNum = 10;
+    //num myNum = 3.14;
+    //double myNum = 3.14;
+    return hello;
   }
 }
