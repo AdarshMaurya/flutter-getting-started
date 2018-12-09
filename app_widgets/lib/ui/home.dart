@@ -62,6 +62,7 @@ class Home extends StatelessWidget {
                 ],
               ),
               PizzaImageWidget(),
+              OrderButton(),
             ]
                 // width: 192.0,
                 // height: 96.0,
@@ -79,6 +80,38 @@ class PizzaImageWidget extends StatelessWidget {
       width: 200.0,
       height: 200.0,
     );
-    return Container(child: image);
+    return Container(
+      child: image,
+      margin: EdgeInsets.only(top: 50.0),
+    );
+  }
+}
+
+class OrderButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var button = new Container(
+        margin: EdgeInsets.only(top: 50.0),
+        child: RaisedButton(
+          child: Text("Order a Pizza"),
+          color: Colors.lightGreen,
+          elevation: 5.0,
+          onPressed: () {
+            order(context);
+          },
+        ));
+    return button;
+  }
+
+  void order(BuildContext context) {
+    var alert = AlertDialog(
+      title: Text("Order Completed"),
+      content: Text("Thanks for your order"),
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        });
   }
 }
