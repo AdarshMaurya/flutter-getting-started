@@ -108,10 +108,6 @@ class OrderButton extends StatelessWidget {
       title: Text("Order Completed"),
       content: Text("Thanks for your order"),
     );
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return alert;
-        });
+    showDialog(context: context, builder: (BuildContext context) => alert);
   }
 }
