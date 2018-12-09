@@ -13,7 +13,7 @@ class HelloFlutterApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Title in App Bar"),
         ),
-        body: home(),
+        body: Home(),
       ),
     );
   }
