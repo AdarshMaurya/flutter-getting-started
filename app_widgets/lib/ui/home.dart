@@ -6,7 +6,7 @@ class Home extends StatelessWidget {
     return Center(
         child: Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.only(top:30.0, left:10.0),
+            padding: EdgeInsets.only(top: 30.0, left: 10.0),
             color: Colors.deepOrangeAccent,
             child: Column(children: <Widget>[
               Row(
@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
                   )),
                 ],
               ),
-                  Row(
+              Row(
                 children: <Widget>[
                   Expanded(
                       child: Text(
@@ -60,11 +60,25 @@ class Home extends StatelessWidget {
                     ),
                   )),
                 ],
-              )
+              ),
+              PizzaImageWidget(),
             ]
                 // width: 192.0,
                 // height: 96.0,
                 // margin: EdgeInsets.only(left:50.0),
                 )));
+  }
+}
+
+class PizzaImageWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    AssetImage pizzaAsset = AssetImage('images/pizza.png');
+    Image image = Image(
+      image: pizzaAsset,
+      width: 200.0,
+      height: 200.0,
+    );
+    return Container(child: image);
   }
 }
