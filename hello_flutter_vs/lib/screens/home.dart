@@ -17,13 +17,15 @@ class Home extends StatelessWidget {
 
   String sayHello() {
     String hello;
-    hello = "hello";
-    //var hello = "hello";
-    //var hello = 8 ;
-    //num myNum = 42;
-    // int myNum = 10;
-    //num myNum = 3.14;
-    //double myNum = 3.14;
+    DateTime now = new DateTime.now();
+    int hour = now.hour;
+    if (hour < 12) {
+      hello = "Good Morning";
+    } else if (hour < 18) {
+      hello = "Good Afternoon";
+    } else {
+      hello = "Good Morning";
+    }
     return hello;
   }
 }
