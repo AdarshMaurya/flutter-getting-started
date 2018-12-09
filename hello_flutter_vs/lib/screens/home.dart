@@ -18,14 +18,18 @@ class Home extends StatelessWidget {
   String sayHello() {
     String hello;
     DateTime now = new DateTime.now();
+    int minute = now.minute;
     int hour = now.hour;
     if (hour < 12) {
       hello = "Good Morning";
     } else if (hour < 18) {
       hello = "Good Afternoon";
     } else {
-      hello = "Good Morning";
+      hello = "Good Evening";
     }
-    return hello;
+
+    String minutes =
+        (minute < 10) ? "0" + minute.toString() : minute.toString();
+    return "It's now " + hour.toString() + ":" + minutes + ".\n" + hello;
   }
 }
