@@ -7,7 +7,7 @@ class Home extends StatelessWidget {
       color: Colors.deepPurple,
       child: Center(
         child: Text(
-          "Hello Flutter!",
+          sayHello(),
           textDirection: TextDirection.ltr,
           style: TextStyle(color: Colors.white, fontSize: 36.0),
         ),
