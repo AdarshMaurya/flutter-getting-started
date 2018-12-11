@@ -35,6 +35,9 @@ class _HelloYouState extends State<HelloYou> {
           child: Column(
             children: <Widget>[
               TextField(
+                decoration: InputDecoration(
+                  hintText: 'Please insert your name'
+                ),
                 onChanged: (String string) {
                   setState(() {
                     name = string;
