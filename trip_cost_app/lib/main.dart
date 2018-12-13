@@ -25,6 +25,7 @@ class _FuelFormState extends State<FuelForm> {
   String name = '';
   final _currencies = ['Rupees', 'Euro', 'Pounds', 'Yens', 'Dollars'];
   String _currency = 'Rupees';
+  TextEditingController distanceController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     TextStyle textStyle = Theme.of(context).textTheme.title;
@@ -39,20 +40,15 @@ class _FuelFormState extends State<FuelForm> {
           child: Column(
             children: <Widget>[
               TextField(
+                controller: distanceController,
                 decoration: InputDecoration(
                   labelText: 'Distance',
                   hintText: "e.g 124",
                   labelStyle: textStyle,
-                  border:OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5.0)
-                  ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0)),
                 ),
                 keyboardType: TextInputType.number,
-                onChanged: (String string) {
-                  setState(() {
-                    name = string;
-                  });
-                },
               ),
               // DropdownButton<String>(
               //   items: _currencies.map((String value) {
