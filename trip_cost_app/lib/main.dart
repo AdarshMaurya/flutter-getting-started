@@ -119,5 +119,6 @@ class _FuelFormState extends State<FuelForm> {
         _totalCost.toStringAsFixed(2) +
         ' ' +
         _currency;
+    return result;
   }
 }
