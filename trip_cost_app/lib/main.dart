@@ -53,7 +53,7 @@ class _FuelFormState extends State<FuelForm> {
                 ),
                 keyboardType: TextInputType.number,
               ),
-                  TextField(
+              TextField(
                 controller: avgController,
                 decoration: InputDecoration(
                   labelText: 'Distance per Unit',
@@ -64,7 +64,7 @@ class _FuelFormState extends State<FuelForm> {
                 ),
                 keyboardType: TextInputType.number,
               ),
-                  TextField(
+              TextField(
                 controller: priceController,
                 decoration: InputDecoration(
                   labelText: 'Price',
@@ -90,7 +90,7 @@ class _FuelFormState extends State<FuelForm> {
                 textColor: Theme.of(context).primaryColorLight,
                 onPressed: () {
                   setState(() {
-                    result = distanceController.text;
+                    result = _calculate();
                   });
                 },
                 child: Text(
@@ -108,5 +108,16 @@ class _FuelFormState extends State<FuelForm> {
     setState(() {
       this._currency = value;
     });
+  }
+
+  String _calculate() {
+    double _distance = double.parse(distanceController.text);
+    double _fuelCost = double.parse(priceController.text);
+    double _consumption = double.parse(avgController.text);
+    double _totalCost = _distance / _consumption * _fuelCost;
+    String _result = 'The total cost of your trip is ' +
+        _totalCost.toStringAsFixed(2) +
+        ' ' +
+        _currency;
   }
 }
