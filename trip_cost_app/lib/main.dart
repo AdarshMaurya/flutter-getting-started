@@ -26,6 +26,7 @@ class _FuelFormState extends State<FuelForm> {
   final _currencies = ['Rupees', 'Euro', 'Pounds', 'Yens', 'Dollars'];
   String _currency = 'Rupees';
   TextEditingController distanceController = new TextEditingController();
+  String result = '';
   @override
   Widget build(BuildContext context) {
     TextStyle textStyle = Theme.of(context).textTheme.title;
@@ -50,17 +51,30 @@ class _FuelFormState extends State<FuelForm> {
                 ),
                 keyboardType: TextInputType.number,
               ),
-              // DropdownButton<String>(
-              //   items: _currencies.map((String value) {
-              //     return DropdownMenuItem<String>(
-              //         value: value, child: Text(value));
-              //   }).toList(),
-              //   value: _currency,
-              //   onChanged: (String value) {
-              //     _onDropdownChanged(value);
-              //   },
-              // ),
-              Text('Hello ' + name + '!')
+              DropdownButton<String>(
+                items: _currencies.map((String value) {
+                  return DropdownMenuItem<String>(
+                      value: value, child: Text(value));
+                }).toList(),
+                value: _currency,
+                onChanged: (String value) {
+                  _onDropdownChanged(value);
+                },
+              ),
+              RaisedButton(
+                color: Theme.of(context).primaryColorDark,
+                textColor: Theme.of(context).primaryColorLight,
+                onPressed: () {
+                  setState(() {
+                    result = distanceController.text;
+                  });
+                },
+                child: Text(
+                  'Submit',
+                  textScaleFactor: 1.5,
+                ),
+              ),
+              Text(result)
             ],
           ),
         ));
