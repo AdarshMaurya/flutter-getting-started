@@ -26,6 +26,8 @@ class _FuelFormState extends State<FuelForm> {
   final _currencies = ['Rupees', 'Euro', 'Pounds', 'Yens', 'Dollars'];
   String _currency = 'Rupees';
   TextEditingController distanceController = new TextEditingController();
+  TextEditingController avgController = new TextEditingController();
+  TextEditingController priceController = new TextEditingController();
   String result = '';
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,28 @@ class _FuelFormState extends State<FuelForm> {
                 decoration: InputDecoration(
                   labelText: 'Distance',
                   hintText: "e.g 124",
+                  labelStyle: textStyle,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0)),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+                  TextField(
+                controller: avgController,
+                decoration: InputDecoration(
+                  labelText: 'Distance per Unit',
+                  hintText: "e.g 17",
+                  labelStyle: textStyle,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0)),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+                  TextField(
+                controller: priceController,
+                decoration: InputDecoration(
+                  labelText: 'Price',
+                  hintText: "e.g 75",
                   labelStyle: textStyle,
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0)),
