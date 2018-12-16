@@ -42,11 +42,11 @@ class Todo {
     return map;
   }
 
-  Todo.fromObject(dynamic o){
+  Todo.fromObject(dynamic o) {
     this._id = o["id"];
     this._title = o["title"];
-    this._description=o["description"];
-    this._priority=o["priority"];
-    this._date=o["date"];
+    this._description = o["description"];
+    this._priority = o["priority"];
+    this._date = o["date"];
   }
 }
