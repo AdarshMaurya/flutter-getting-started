@@ -19,7 +19,7 @@ class TodoDetail extends StatefulWidget {
   TodoDetail(this.todo);
 
   @override
-  State<StatefulWidget> createState() => TodoDetailState();
+  State<StatefulWidget> createState() => TodoDetailState(todo);
 }
 
 class TodoDetailState extends State {
@@ -28,6 +28,10 @@ class TodoDetailState extends State {
   String _priority = "Low";
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
+
+  TodoDetailState(Todo todo) {
+    this.todo = todo;
+  }
 
   @override
   Widget build(BuildContext context) {
