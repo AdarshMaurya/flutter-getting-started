@@ -20,6 +20,12 @@ class Todo {
     }
   }
 
+  set description(String newDescription) {
+    if (newDescription.length <= 255) {
+      _title = newDescription;
+    }
+  }
+
   set priority(int newPriority) {
     if (newPriority > 0 && newPriority <= 3) {
       _priority = newPriority;
